@@ -335,7 +335,7 @@ function render() {
     couple.append(personCard(piv, true));
     const married = g.status === "married";
     couple.append(
-      el("span", "heart", married ? "♥" : "💔"),
+      el("span", "heart", married ? "💚" : "💔"),
       personCard(
         g.partner,
         false,

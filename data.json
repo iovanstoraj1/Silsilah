@@ -94,7 +94,7 @@
           "status": "divorced"
         },
         {
-          "id": "pmumqpl6zbyf",
+          "id": "pmuocf5j2dhe",
           "status": "married"
         }
       ]
@@ -381,25 +381,6 @@
         }
       ]
     },
-    "pmumqpl6zbyf": {
-      "id": "pmumqpl6zbyf",
-      "father": null,
-      "mother": "pmumqiysvxld",
-      "spouse": null,
-      "name": "Amari",
-      "g": "L",
-      "born": "",
-      "died": "",
-      "note": "",
-      "order": 19,
-      "exSpouses": [],
-      "spouses": [
-        {
-          "id": "pmumtw1970ct",
-          "status": "married"
-        }
-      ]
-    },
     "pmumqpwnv3p8": {
       "id": "pmumqpwnv3p8",
       "father": "pmumqvqlrp3p",
@@ -470,6 +451,10 @@
       "order": 23,
       "exSpouses": [],
       "spouses": [
+        {
+          "id": "pmuoc87ggwu0",
+          "status": "married"
+        },
         {
           "id": "pmumrddejfid",
           "status": "married"
@@ -571,34 +556,6 @@
         }
       ]
     },
-    "pmumqt4w0avz": {
-      "id": "pmumqt4w0avz",
-      "father": "pmumql1lubgl",
-      "mother": null,
-      "spouse": null,
-      "name": "Anita",
-      "g": "P",
-      "born": "",
-      "died": "",
-      "note": "",
-      "order": 29,
-      "exSpouses": [],
-      "spouses": []
-    },
-    "pmumqt6cfb13": {
-      "id": "pmumqt6cfb13",
-      "father": "pmumql1lubgl",
-      "mother": null,
-      "spouse": null,
-      "name": "Agus",
-      "g": "L",
-      "born": "",
-      "died": "",
-      "note": "",
-      "order": 30,
-      "exSpouses": [],
-      "spouses": []
-    },
     "pmumquirgxsp": {
       "id": "pmumquirgxsp",
       "father": null,
@@ -636,20 +593,6 @@
           "status": "divorced"
         }
       ]
-    },
-    "pmumqvcae339": {
-      "id": "pmumqvcae339",
-      "father": "pmumqv1bstra",
-      "mother": "pmumqiysvxld",
-      "spouse": null,
-      "name": "---S2 = Amari",
-      "g": "L",
-      "born": "",
-      "died": "",
-      "note": "",
-      "order": 35,
-      "exSpouses": [],
-      "spouses": []
     },
     "pmumqvqlrp3p": {
       "id": "pmumqvqlrp3p",
@@ -974,21 +917,22 @@
     "pmumrcuj7lhh": {
       "id": "pmumrcuj7lhh",
       "father": "pmumqqkuvy4i",
-      "mother": null,
+      "mother": "pmuoc87ggwu0",
       "spouse": null,
-      "name": "Chrsitian --S1 Susan",
+      "name": "Chrsitian",
       "g": "L",
       "born": "",
       "died": "",
       "note": "",
       "order": 56,
       "exSpouses": [],
-      "spouses": []
+      "spouses": [],
+      "adopted": false
     },
     "pmumrd4jim8l": {
       "id": "pmumrd4jim8l",
       "father": "pmumqqkuvy4i",
-      "mother": null,
+      "mother": "pmumrddejfid",
       "spouse": null,
       "name": "Lius",
       "g": "L",
@@ -997,12 +941,13 @@
       "note": "",
       "order": 57,
       "exSpouses": [],
-      "spouses": []
+      "spouses": [],
+      "adopted": false
     },
     "pmumrd98dizf": {
       "id": "pmumrd98dizf",
       "father": "pmumqqkuvy4i",
-      "mother": null,
+      "mother": "pmumrddejfid",
       "spouse": null,
       "name": "Putri",
       "g": "P",
@@ -1011,7 +956,8 @@
       "note": "",
       "order": 58,
       "exSpouses": [],
-      "spouses": []
+      "spouses": [],
+      "adopted": false
     },
     "pmumrddejfid": {
       "id": "pmumrddejfid",
@@ -1150,12 +1096,7 @@
       "order": 68,
       "father": null,
       "mother": null,
-      "spouses": [
-        {
-          "id": "pmumqpl6zbyf",
-          "status": "married"
-        }
-      ],
+      "spouses": [],
       "name": "Saad (Alm.)",
       "g": "P",
       "born": "",
@@ -1292,10 +1233,11 @@
       "mother": "pmumtwis4wfn",
       "spouses": [],
       "name": "???",
-      "g": "L",
+      "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "adopted": false
     },
     "pmumtz88lr4k": {
       "id": "pmumtz88lr4k",
@@ -1550,11 +1492,12 @@
           "status": "married"
         }
       ],
-      "name": "Suwan",
+      "name": "Swan",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "adopted": false
     },
     "pmumu3gpzzqr": {
       "id": "pmumu3gpzzqr",
@@ -1566,7 +1509,8 @@
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "adopted": true
     },
     "pmumu3vgrmd8": {
       "id": "pmumu3vgrmd8",
@@ -1578,14 +1522,20 @@
       "g": "P",
       "born": "",
       "died": "",
-      "note": "Anak ke-2 dari Swan"
+      "note": "",
+      "adopted": true
     },
     "pmumu5lyrtlr": {
       "id": "pmumu5lyrtlr",
-      "order": 98,
+      "order": 99,
       "father": "pmumql1lubgl",
       "mother": "pmumu30082po",
-      "spouses": [],
+      "spouses": [
+        {
+          "id": "pmuocji31s39",
+          "status": "married"
+        }
+      ],
       "name": "Yeni",
       "g": "P",
       "born": "",
@@ -1594,15 +1544,21 @@
     },
     "pmumu5u2r39o": {
       "id": "pmumu5u2r39o",
-      "order": 99,
+      "order": 98,
       "father": "pmumql1lubgl",
       "mother": "pmumu30082po",
-      "spouses": [],
-      "name": "Wiwik",
+      "spouses": [
+        {
+          "id": "pmuociskeshc",
+          "status": "married"
+        }
+      ],
+      "name": "Wiwin",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "adopted": false
     },
     "pmumu5zkvjmc": {
       "id": "pmumu5zkvjmc",
@@ -1952,7 +1908,7 @@
     "pmumvcooeiwq": {
       "id": "pmumvcooeiwq",
       "order": 123,
-      "father": "pmumqpl6zbyf",
+      "father": null,
       "mother": "pmumtw1970ct",
       "spouses": [],
       "name": "Nur Aini",
@@ -1960,8 +1916,189 @@
       "born": "",
       "died": "",
       "note": ""
+    },
+    "pmuoc87ggwu0": {
+      "id": "pmuoc87ggwu0",
+      "order": 124,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumqqkuvy4i",
+          "status": "married"
+        }
+      ],
+      "name": "Susan",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocdo97gtp": {
+      "id": "pmuocdo97gtp",
+      "order": 125,
+      "father": "pmumqparxtb0",
+      "mother": "pmumtx8q0cke",
+      "spouses": [],
+      "name": "???",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocecs38va": {
+      "id": "pmuocecs38va",
+      "order": 126,
+      "father": "pmumty79cu5w",
+      "mother": "pmumqpf4l29b",
+      "spouses": [],
+      "name": "???",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocf5j2dhe": {
+      "id": "pmuocf5j2dhe",
+      "order": 127,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumqiysvxld",
+          "status": "married"
+        }
+      ],
+      "name": "Amari",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocfd0wt6l": {
+      "id": "pmuocfd0wt6l",
+      "order": 128,
+      "father": "pmuocf5j2dhe",
+      "mother": "pmumqiysvxld",
+      "spouses": [],
+      "name": "Nur",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuociskeshc": {
+      "id": "pmuociskeshc",
+      "order": 129,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumu5u2r39o",
+          "status": "married"
+        }
+      ],
+      "name": "Taufik",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocixx21rj": {
+      "id": "pmuocixx21rj",
+      "order": 130,
+      "father": "pmuociskeshc",
+      "mother": "pmumu5u2r39o",
+      "spouses": [],
+      "name": "Adrian",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocizxh5ji": {
+      "id": "pmuocizxh5ji",
+      "order": 131,
+      "father": "pmuociskeshc",
+      "mother": "pmumu5u2r39o",
+      "spouses": [],
+      "name": "Putra",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocj2wze0u": {
+      "id": "pmuocj2wze0u",
+      "order": 132,
+      "father": "pmuociskeshc",
+      "mother": "pmumu5u2r39o",
+      "spouses": [],
+      "name": "Aldi",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocji31s39": {
+      "id": "pmuocji31s39",
+      "order": 133,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumu5lyrtlr",
+          "status": "married"
+        }
+      ],
+      "name": "Arif",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocjrj2fss": {
+      "id": "pmuocjrj2fss",
+      "order": 134,
+      "father": "pmuocji31s39",
+      "mother": "pmumu5lyrtlr",
+      "spouses": [],
+      "name": "Rafa",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
+    },
+    "pmuocjxnj4m8": {
+      "id": "pmuocjxnj4m8",
+      "order": 135,
+      "father": "pmuocji31s39",
+      "mother": "pmumu5lyrtlr",
+      "spouses": [],
+      "name": "Yojo",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "adopted": false
     }
   },
-  "pivot": "pmumqf3nqiyc",
-  "seq": 124
+  "pivot": "pmumubhi9mk8",
+  "seq": 136,
+  "trail": [
+    "pmumqf3nqiyc",
+    "pmumqlayvi1g",
+    "pmumubhi9mk8"
+  ]
 }
