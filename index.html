@@ -60,6 +60,10 @@
         border-color: var(--acc);
         color: var(--acc);
       }
+      button:disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
       button:focus-visible,
       input:focus-visible,
       select:focus-visible,
@@ -140,6 +144,13 @@
         flex-direction: column;
         gap: 10px;
       }
+      .cw {
+        display: flex;
+        align-items: stretch;
+      }
+      .cw.step {
+        opacity: 0.55;
+      }
       .card {
         background: var(--card);
         border: 1px solid var(--line);
@@ -148,6 +159,10 @@
         padding: 10px 14px;
         min-width: 170px;
         text-align: left;
+      }
+      .cw .card {
+        border-radius: 8px 0 0 8px;
+        flex: 1;
       }
       .card.L {
         border-left-color: var(--L);
@@ -168,8 +183,22 @@
         border-left-width: 6px;
       }
       .card.step {
-        opacity: 0.55;
         border-style: dashed;
+      }
+      .acts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-left: none;
+        border-radius: 0 8px 8px 0;
+      }
+      .acts button {
+        border: none;
+        padding: 2px 9px;
+        font-size: 14px;
+        border-radius: 0;
       }
       .couple {
         align-items: center;
@@ -183,6 +212,7 @@
         color: var(--muted);
         align-self: stretch;
         min-width: 170px;
+        border-radius: 8px;
       }
       .parents {
         font-size: 14px;
@@ -279,6 +309,23 @@
         <label for="fDied">Wafat (tahun, kosongkan bila masih hidup)</label
         ><input id="fDied" /> <label for="fNote">Catatan</label
         ><textarea id="fNote" rows="2"></textarea>
+        <div id="pbox">
+          <div class="two">
+            <div>
+              <label for="fFa">Ayah</label
+              ><select id="fFa"></select>
+            </div>
+            <div>
+              <label for="fMo">Ibu</label
+              ><select id="fMo"></select>
+            </div>
+          </div>
+          <label for="fAdopt">Status sebagai anak</label>
+          <select id="fAdopt">
+            <option value="">Anak kandung</option>
+            <option value="1">Anak angkat</option>
+          </select>
+        </div>
         <div class="foot">
           <button type="button" id="btnDel" class="danger">Hapus</button>
           <button type="button" id="btnCancel">Batal</button>
@@ -289,13 +336,18 @@
 
     <script>
       const KEY = "silsilah_v1";
-      let db = { people: {}, pivot: null, seq: 0 };
+      let db = { people: {}, pivot: null, seq: 0, trail: [] };
       try {
         const s = JSON.parse(localStorage.getItem(KEY));
         if (s && s.people) db = s;
       } catch (e) {}
 
-      // migrasi data lama (spouse tunggal / exSpouses) ke daftar spouses[] {id, status}
+      const P = (id) => db.people[id];
+      const $ = (id) => document.getElementById(id);
+      const uid = () =>
+        "p" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+
+      // migrasi data lama + pastikan hubungan pasangan selalu dua arah & statusnya sama
       function normalize() {
         let max = -1;
         Object.values(db.people).forEach((p) => {
@@ -311,6 +363,19 @@
           }
         });
         if (typeof db.seq !== "number") db.seq = max + 1;
+        const all = Object.values(db.people);
+        all.forEach((p) => {
+          p.spouses = p.spouses.filter((s) => P(s.id));
+        });
+        all.forEach((p) =>
+          p.spouses.slice().forEach((s) => {
+            const q = P(s.id),
+              r = q.spouses.find((x) => x.id === p.id);
+            if (!r) q.spouses.push({ id: p.id, status: s.status });
+            else if (r.status !== s.status) r.status = s.status = "divorced";
+          }),
+        );
+        if (!Array.isArray(db.trail)) db.trail = [];
       }
       normalize();
 
@@ -321,10 +386,6 @@
           alert("Gagal menyimpan ke localStorage. Coba ekspor datanya.");
         }
       };
-      const P = (id) => db.people[id];
-      const $ = (id) => document.getElementById(id);
-      const uid = () =>
-        "p" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
 
       function el(tag, cls, text) {
         const e = document.createElement(tag);
@@ -338,8 +399,9 @@
           : "";
       }
 
-      // cls: kelas tambahan ("step" = anak tiri / mantan). tag: label kecil tambahan.
-      function personCard(p, pivot, cls, tag) {
+      // list: saudara sekandung yang tampil bersama (untuk tombol geser urutan). kid: anak dari pivot (breadcrumb ikut pivot/sisi kiri)
+      function personCard(p, pivot, cls, tag, list, kid) {
+        const w = el("div", "cw" + (cls ? " " + cls : ""));
         const b = el(
           "button",
           "card " + p.g + (pivot ? " pivot" : "") + (cls ? " " + cls : ""),
@@ -347,14 +409,65 @@
         b.append(el("b", "", p.name));
         if (years(p)) b.append(el("small", "", years(p)));
         if (tag) b.append(el("small", "", tag));
+        if (p.adopted) b.append(el("small", "", "(anak angkat)"));
         if (p.note) b.append(el("small", "", p.note));
-        if (!pivot) b.onclick = () => go(p.id);
-        else b.onclick = () => openForm({ mode: "edit", id: p.id });
+        b.onclick = () =>
+          pivot ? openForm({ mode: "edit", id: p.id }) : go(p.id, kid);
         b.title = pivot ? "Klik untuk edit" : "Buka keluarga " + p.name;
-        return b;
+        w.append(b);
+        const acts = el("div", "acts");
+        const ed = el("button", "", "✎");
+        ed.title = "Edit " + p.name;
+        ed.setAttribute("aria-label", "Edit " + p.name);
+        ed.onclick = () => openForm({ mode: "edit", id: p.id });
+        if (list && list.length > 1) {
+          const i = list.indexOf(p);
+          const up = el("button", "", "▲"),
+            dn = el("button", "", "▼");
+          up.title = "Lebih tua (naikkan urutan)";
+          dn.title = "Lebih muda (turunkan urutan)";
+          up.disabled = i <= 0;
+          dn.disabled = i >= list.length - 1;
+          up.onclick = () => move(list, i, -1);
+          dn.onclick = () => move(list, i, 1);
+          acts.append(up, ed, dn);
+        } else acts.append(ed);
+        w.append(acts);
+        return w;
       }
 
-      function go(id) {
+      function move(list, i, d) {
+        const a = list[i],
+          b = list[i + d];
+        if (!b) return;
+        const t = a.order;
+        a.order = b.order;
+        b.order = t;
+        save();
+        render();
+      }
+
+      function defChain(id) {
+        const c = [],
+          seen = new Set();
+        let p = P(id);
+        while (p && !seen.has(p.id)) {
+          seen.add(p.id);
+          c.unshift(p.id);
+          p = P(p.father) || P(p.mother);
+        }
+        return c;
+      }
+      // Jejak navigasi: klik anak = ikut jalur pivot saat ini (sisi kiri), bukan otomatis ayah.
+      function go(id, kid) {
+        let t = Array.isArray(db.trail) ? db.trail : [];
+        const valid = t.length && t[t.length - 1] === db.pivot;
+        if (kid && valid && !t.includes(id)) t = [...t, id];
+        else {
+          const i = t.indexOf(id);
+          t = valid && i >= 0 ? t.slice(0, i + 1) : defChain(id);
+        }
+        db.trail = t;
         db.pivot = id;
         save();
         render();
@@ -362,42 +475,29 @@
       }
 
       function setStatus(piv, partnerId, status) {
-        const partner = P(partnerId);
         const a = piv.spouses.find((s) => s.id === partnerId);
-        const b = partner.spouses.find((s) => s.id === piv.id);
+        const b = P(partnerId).spouses.find((s) => s.id === piv.id);
         if (a) a.status = status;
         if (b) b.status = status;
         save();
         render();
       }
 
-      function chainOf(p) {
-        const chain = [],
-          seen = new Set();
-        while (p && !seen.has(p.id)) {
-          seen.add(p.id);
-          chain.unshift(p);
-          p = P(p.father) || P(p.mother);
-        }
-        return chain;
-      }
-
-      // Kelompokkan anak per pasangan, plus anak tiri (anak pasangan yang bukan anak piv)
-      // dan anak "lainnya" (orang tua satunya tidak tercatat / bukan pasangan resmi).
       function familyGroups(piv) {
         const spouses = (piv.spouses || [])
           .map((s) => ({ ...s, p: P(s.id) }))
           .filter((s) => s.p);
+        const people = Object.values(db.people);
         const groups = spouses.map((s) => {
           const partner = s.p;
-          const together = Object.values(db.people)
+          const together = people
             .filter(
               (k) =>
                 (k.father === piv.id || k.mother === piv.id) &&
                 (k.father === partner.id || k.mother === partner.id),
             )
             .sort((a, b) => a.order - b.order);
-          const stepkids = Object.values(db.people)
+          const stepkids = people
             .filter(
               (k) =>
                 (k.father === partner.id || k.mother === partner.id) &&
@@ -408,7 +508,7 @@
           return { status: s.status, partner, together, stepkids };
         });
         const partnerIds = new Set(spouses.map((s) => s.id));
-        const solo = Object.values(db.people)
+        const solo = people
           .filter((k) => {
             if (!(k.father === piv.id || k.mother === piv.id)) return false;
             const other = k.father === piv.id ? k.mother : k.father;
@@ -418,10 +518,10 @@
         return { groups, solo };
       }
 
-      function kidCol(kids, extraCls, extraTag, addFn) {
+      function kidCol(kids, extraCls, extraTag, addFn, kid) {
         const col = el("div", "col");
         kids.forEach((k) =>
-          col.append(personCard(k, false, extraCls, extraTag)),
+          col.append(personCard(k, false, extraCls, extraTag, kids, kid)),
         );
         if (addFn) {
           const add = el("button", "card ghost", "+ Tambah anak");
@@ -462,8 +562,10 @@
           return;
         }
 
-        // Breadcrumb
-        const chain = chainOf(piv);
+        let t = (db.trail || []).filter((x) => P(x));
+        if (t[t.length - 1] !== piv.id) t = defChain(piv.id);
+        db.trail = t;
+        const chain = t.map(P);
         crumbs.append(el("span", "sep", "/"));
         chain.forEach((p, i) => {
           if (i === chain.length - 1) crumbs.append(el("span", "cur", p.name));
@@ -485,7 +587,6 @@
           }
         }
 
-        // Orang tua — diurut sesuai urutan pembuatan, bukan jenis kelamin
         const f = P(piv.father),
           m = P(piv.mother);
         const pr = el("div", "parents", "Orang tua: ");
@@ -515,13 +616,12 @@
         }
         main.append(pr);
 
-        // Pasangan — bisa lebih dari satu sekaligus (poligami), plus status cerai per pasangan
         main.append(el("div", "lbl", "Pasangan & Anak"));
         const { groups, solo } = familyGroups(piv);
 
         groups.forEach((g) => {
-          const fam = el("div", "fam");
-          const couple = el("div", "couple");
+          const fam = el("div", "fam"),
+            couple = el("div", "couple");
           couple.append(personCard(piv, true));
           const married = g.status === "married";
           couple.append(
@@ -547,16 +647,20 @@
             ),
           );
           fam.append(
-            kidCol(g.together, null, null, () =>
-              openForm({
-                mode: "new",
-                rel: "child",
-                ref: piv.id,
-                partner: g.partner.id,
-              }),
+            kidCol(
+              g.together,
+              null,
+              null,
+              () =>
+                openForm({
+                  mode: "new",
+                  rel: "child",
+                  ref: piv.id,
+                  partner: g.partner.id,
+                }),
+              true,
             ),
           );
-
           if (g.stepkids.length) {
             fam.append(
               el(
@@ -569,7 +673,7 @@
                   ")",
               ),
             );
-            fam.append(kidCol(g.stepkids, "step", "(anak tiri)", null));
+            fam.append(kidCol(g.stepkids, "step", "(anak tiri)", null, false));
           }
           main.append(fam);
         });
@@ -589,12 +693,18 @@
             el(
               "div",
               "sub",
-              "Anak lainnya / tanpa pasangan tercatat (" + solo.length + ")",
+              "Anak lainnya / tanpa pasangan tercatat (" +
+                solo.length +
+                ") — klik ✎ lalu isi Ayah/Ibu untuk memindahkan",
             ),
           );
           main.append(
-            kidCol(solo, null, null, () =>
-              openForm({ mode: "new", rel: "child", ref: piv.id }),
+            kidCol(
+              solo,
+              null,
+              null,
+              () => openForm({ mode: "new", rel: "child", ref: piv.id }),
+              true,
             ),
           );
         }
@@ -602,24 +712,54 @@
 
       // ---------- Form ----------
       let ctx = null;
+      function hasAncestor(cid, target) {
+        const seen = new Set(),
+          st = [cid];
+        while (st.length) {
+          const x = P(st.pop());
+          if (!x || seen.has(x.id)) continue;
+          seen.add(x.id);
+          if (x.id === target) return true;
+          st.push(x.father, x.mother);
+        }
+        return false;
+      }
+      function fillParent(sel, g, cur, self) {
+        sel.replaceChildren(new Option("— tidak tercatat —", ""));
+        Object.values(db.people)
+          .filter((x) => x.g === g && !hasAncestor(x.id, self))
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .forEach((x) =>
+            sel.add(
+              new Option(x.name + (x.born ? " (" + x.born + ")" : ""), x.id),
+            ),
+          );
+        sel.value = cur || "";
+      }
       function openForm(c) {
         ctx = c;
-        const p = c.mode === "edit" ? P(c.id) : {};
-        $("dTitle").textContent =
-          c.mode === "edit"
-            ? "Edit " + p.name
-            : {
-                root: "Orang pertama",
-                spouse: "Tambah pasangan",
-                child: "Tambah anak",
-                parent: "Tambah orang tua",
-              }[c.rel];
+        const edit = c.mode === "edit",
+          p = edit ? P(c.id) : {};
+        $("dTitle").textContent = edit
+          ? "Edit " + p.name
+          : {
+              root: "Orang pertama",
+              spouse: "Tambah pasangan",
+              child: "Tambah anak",
+              parent: "Tambah orang tua",
+            }[c.rel];
         $("fName").value = p.name || "";
         $("fG").value = p.g || c.g || "L";
         $("fBorn").value = p.born || "";
         $("fDied").value = p.died || "";
         $("fNote").value = p.note || "";
-        $("btnDel").style.display = c.mode === "edit" ? "" : "none";
+        $("fAdopt").value = p.adopted ? "1" : "";
+        $("pbox").style.display = edit ? "" : "none";
+        if (edit) {
+          fillParent($("fFa"), "L", p.father, p.id);
+          fillParent($("fMo"), "P", p.mother, p.id);
+        }
+        $("btnDel").style.display = edit ? "" : "none";
         $("dlg").showModal();
         $("fName").focus();
       }
@@ -631,10 +771,14 @@
           born: $("fBorn").value.trim(),
           died: $("fDied").value.trim(),
           note: $("fNote").value.trim(),
+          adopted: !!$("fAdopt").value,
         };
         if (!data.name) return;
         if (ctx.mode === "edit") {
-          Object.assign(P(ctx.id), data);
+          const p = P(ctx.id);
+          Object.assign(p, data);
+          p.father = $("fFa").value || null;
+          p.mother = $("fMo").value || null;
           save();
           render();
           return;
@@ -654,13 +798,12 @@
         }
         if (ctx.rel === "child") {
           const partner = ctx.partner ? P(ctx.partner) : null;
-          const dad = ref.g === "L" ? ref : partner;
-          const mom = ref.g === "P" ? ref : partner;
+          const dad = ref.g === "L" ? ref : partner,
+            mom = ref.g === "P" ? ref : partner;
           n.father = dad ? dad.id : null;
           n.mother = mom ? mom.id : null;
         }
         if (ctx.rel === "parent") {
-          const otherId = ref.father === undefined ? null : null; // placeholder, replaced below
           if (n.g === "L") ref.father = n.id;
           else ref.mother = n.id;
           const other = P(n.g === "L" ? ref.mother : ref.father);
@@ -670,7 +813,10 @@
           }
         }
         db.people[n.id] = n;
-        if (ctx.rel === "root") db.pivot = n.id;
+        if (ctx.rel === "root") {
+          db.pivot = n.id;
+          db.trail = [n.id];
+        }
         save();
         render();
       });
