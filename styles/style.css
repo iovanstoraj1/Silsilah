@@ -7,8 +7,8 @@
   --L: #3f6b7d;
   --P: #a4526a;
   --acc: #4a5d3a;
-  /* --F: #7c4dbd; */
-  --F: #622ab2;
+  --F: #7c4dbd;
+  --crumb-w: 300px; /* lebar maks tiap nama di jalur */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -20,8 +20,7 @@
     --L: #7fb0c4;
     --P: #dc8fa8;
     --acc: #a3bd88;
-    /* --F: #b99be0; */
-    --F: #4a2082;
+    --F: #b99be0;
   }
 }
 * {
@@ -104,6 +103,16 @@ select {
   padding: 2px 6px;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+#crumbs .crumb {
+  max-width: min(var(--crumb-w), 100%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#crumbs .up {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 #crumbs .sep {
   color: var(--muted);

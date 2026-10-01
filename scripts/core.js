@@ -85,6 +85,28 @@ function pickJson(cb) {
   i.click();
 }
 
+// ---------- Posisi terakhir (pivot) ----------
+// Disimpan terpisah dari draf editor, jadi viewer juga ingat posisinya saat refresh.
+const NAV_KEY = "silsilah_nav";
+function saveNav() {
+  try {
+    localStorage.setItem(
+      NAV_KEY,
+      JSON.stringify({ pivot: db.pivot, trail: db.trail }),
+    );
+  } catch (e) {}
+}
+// panggil setelah db terisi dan sebelum render() pertama
+function applyNav() {
+  try {
+    const n = JSON.parse(localStorage.getItem(NAV_KEY));
+    if (n && P(n.pivot)) {
+      db.pivot = n.pivot;
+      db.trail = Array.isArray(n.trail) ? n.trail : [];
+    }
+  } catch (e) {}
+}
+
 function setNotice(n) {
   notice = n;
 }
@@ -135,7 +157,7 @@ function personCard(p, pivot, cls, tag, list, kid) {
   b.append(el("b", "", p.name));
   if (years(p)) b.append(el("small", "", years(p)));
   if (tag) b.append(el("small", "", tag));
-  if (p.foster) b.append(el("small", "fl", "")); //Keterangan anak asuh
+  if (p.foster) b.append(el("small", "fl", "")); //Ket anak asuh
   if (p.note) b.append(el("small", "", p.note));
   if (pivot) {
     if (E) {
@@ -283,26 +305,28 @@ function render() {
   let t = (db.trail || []).filter((x) => P(x));
   if (t[t.length - 1] !== piv.id) t = defChain(piv.id);
   db.trail = t;
+  saveNav();
+  // trail tetap utuh (supaya "naik" bisa terus sampai atas),
+  // tapi yang ditampilkan cuma 3 terakhir: 2 di atas + orang sekarang
   const chain = t.map(P);
-  crumbs.append(el("span", "sep", "/"));
-  chain.forEach((p, i) => {
-    if (i === chain.length - 1) crumbs.append(el("span", "cur", p.name));
-    else {
-      const b = el("button", "", p.name);
+  const shown = chain.slice(-3);
+  crumbs.append(el("span", "sep", chain.length > shown.length ? "… /" : "/"));
+  shown.forEach((p, i) => {
+    if (i === shown.length - 1) {
+      const c = el("span", "cur crumb", p.name);
+      c.title = p.name;
+      crumbs.append(c);
+    } else {
+      const b = el("button", "crumb", p.name);
+      b.title = p.name;
       b.onclick = () => go(p.id);
       crumbs.append(b, el("span", "sep", "/"));
     }
   });
   if (chain.length > 1) {
-    const up = el("button", "", ".. naik");
-    up.style.marginLeft = "auto";
+    const up = el("button", "up", ".. naik");
     up.onclick = () => go(chain[chain.length - 2].id);
     crumbs.append(up);
-    if (chain.length > 2) {
-      const up2 = el("button", "", "../.. naik 2");
-      up2.onclick = () => go(chain[chain.length - 3].id);
-      crumbs.append(up2);
-    }
   }
 
   const f = P(piv.father),
@@ -348,7 +372,7 @@ function render() {
         g.partner,
         false,
         married ? null : "step",
-        married ? null : "",
+        married ? null : "", //Ket cerai
       ),
     );
     if (E) {
