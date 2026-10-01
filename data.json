@@ -7,7 +7,7 @@
       "spouse": "pmumqfhew1pt",
       "name": "Kam Sin Boe",
       "g": "L",
-      "born": "2000",
+      "born": "",
       "died": "",
       "note": "",
       "order": 0,
@@ -2137,7 +2137,5 @@
   },
   "pivot": "pmumqf3nqiyc",
   "seq": 141,
-  "trail": [
-    "pmumqf3nqiyc"
-  ]
+  "trail": ["pmumqf3nqiyc"]
 }
