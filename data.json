@@ -104,7 +104,7 @@
       "father": "pmumqf3nqiyc",
       "mother": "pmumqfhew1pt",
       "spouse": "pmumqvqlrp3p",
-      "name": "Kam Tiong Tjhioe (Tirana Djuwita)",
+      "name": "Kam Tiong Djoe (Tirana Djuwita)",
       "g": "P",
       "born": "",
       "died": "",
@@ -116,14 +116,15 @@
           "id": "pmumqvqlrp3p",
           "status": "married"
         }
-      ]
+      ],
+      "foster": false
     },
     "pmumqjtwzosq": {
       "id": "pmumqjtwzosq",
       "father": "pmumqf3nqiyc",
       "mother": "pmumqfhew1pt",
       "spouse": "pmumqw7m6y9b",
-      "name": "Kam Sin Boe (Andik Subianto)",
+      "name": "Kam Sin Bie (Andik Subianto)",
       "g": "L",
       "born": "",
       "died": "",
@@ -135,14 +136,15 @@
           "id": "pmumqw7m6y9b",
           "status": "married"
         }
-      ]
+      ],
+      "foster": false
     },
     "pmumqkma9hd9": {
       "id": "pmumqkma9hd9",
       "father": "pmumqf3nqiyc",
       "mother": "pmumqfhew1pt",
       "spouse": "pmumqwq91hxf",
-      "name": "Kam Sin Tjoe (Tutik Niawati)",
+      "name": "Kam Tjoe Nio (Tutik Niawati)",
       "g": "P",
       "born": "",
       "died": "",
@@ -154,7 +156,8 @@
           "id": "pmumqwq91hxf",
           "status": "married"
         }
-      ]
+      ],
+      "foster": false
     },
     "pmumql1lubgl": {
       "id": "pmumql1lubgl",
@@ -2134,5 +2137,7 @@
   },
   "pivot": "pmumqf3nqiyc",
   "seq": 141,
-  "trail": []
+  "trail": [
+    "pmumqf3nqiyc"
+  ]
 }

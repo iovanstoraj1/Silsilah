@@ -421,7 +421,7 @@ function render() {
             ")",
         ),
       );
-      fam.append(kidCol(g.stepkids, "step", "(anak tiri)", null, false));
+      fam.append(kidCol(g.stepkids, "step", "", null, false)); //Ket anak tiri
     }
     main.append(fam);
   });
