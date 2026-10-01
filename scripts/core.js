@@ -13,6 +13,10 @@ function normalize() {
   Object.values(db.people).forEach((p) => {
     if (typeof p.order !== "number") p.order = ++max;
     else max = Math.max(max, p.order);
+    if (p.adopted) {
+      p.foster = true; // migrasi: "anak angkat" -> "anak asuh"
+      delete p.adopted;
+    }
     if (!Array.isArray(p.spouses)) {
       p.spouses = [];
       if (p.spouse) p.spouses.push({ id: p.spouse, status: "married" });
@@ -122,12 +126,16 @@ function personCard(p, pivot, cls, tag, list, kid) {
   const w = el("div", "cw" + (E ? "" : " ro") + (cls ? " " + cls : ""));
   const b = el(
     pivot && !E ? "div" : "button",
-    "card " + p.g + (pivot ? " pivot" : "") + (cls ? " " + cls : ""),
+    "card " +
+      p.g +
+      (pivot ? " pivot" : "") +
+      (p.foster ? " foster" : "") +
+      (cls ? " " + cls : ""),
   );
   b.append(el("b", "", p.name));
   if (years(p)) b.append(el("small", "", years(p)));
   if (tag) b.append(el("small", "", tag));
-  if (p.adopted) b.append(el("small", "", "(anak angkat)"));
+  if (p.foster) b.append(el("small", "fl", "")); //Keterangan anak asuh
   if (p.note) b.append(el("small", "", p.note));
   if (pivot) {
     if (E) {
@@ -340,7 +348,7 @@ function render() {
         g.partner,
         false,
         married ? null : "step",
-        married ? null : "(cerai)",
+        married ? null : "",
       ),
     );
     if (E) {
