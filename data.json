@@ -789,7 +789,12 @@
       "note": "",
       "order": 47,
       "exSpouses": [],
-      "spouses": []
+      "spouses": [
+        {
+          "id": "pmur1mmgt9h6",
+          "status": "married"
+        }
+      ]
     },
     "pmumrbfd6wuk": {
       "id": "pmumrbfd6wuk",
@@ -2101,8 +2106,8 @@
     "pmup01lbxg2l": {
       "id": "pmup01lbxg2l",
       "order": 112,
-      "father": "pmumqlayvi1g",
-      "mother": "pmumual1g3cz",
+      "father": null,
+      "mother": null,
       "spouses": [
         {
           "id": "pmup01uea0ti",
@@ -2133,9 +2138,31 @@
       "died": "",
       "note": "",
       "foster": false
+    },
+    "pmur1mmgt9h6": {
+      "id": "pmur1mmgt9h6",
+      "order": 141,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumrbbbxw18",
+          "status": "married"
+        }
+      ],
+      "name": "Awe",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
     }
   },
-  "pivot": "pmumqf3nqiyc",
-  "seq": 141,
-  "trail": ["pmumqf3nqiyc"]
+  "pivot": "pmumqqdm91tz",
+  "seq": 142,
+  "trail": [
+    "pmumqf3nqiyc",
+    "pmumqjh182v0",
+    "pmumqqdm91tz"
+  ]
 }
