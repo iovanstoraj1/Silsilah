@@ -2153,15 +2153,17 @@
       "order": 138,
       "father": "pmumqlayvi1g",
       "mother": "pmumual1g3cz",
-      "spouses": [{
-        "id": "pmumu7kmt5s4",
+      "spouses": [
+        {
+          "id": "pmumu7kmt5s4",
           "status": "married"
-      }],
+        }
+      ],
       "name": "Nur Asih",
       "g": "P",
       "born": "",
       "died": "",
-      "note": "(Anak angkat sejak gadis)",
+      "note": "(Anak angkat Bu Asnati)",
       "foster": true
     },
     "pmv1tdst65at": {
@@ -2253,9 +2255,10 @@
       "foster": false
     }
   },
-  "pivot": "pmumqf3nqiyc",
+  "pivot": "pmumqlayvi1g",
   "seq": 150,
   "trail": [
-    "pmumqf3nqiyc"
+    "pmumqf3nqiyc",
+    "pmumqlayvi1g"
   ]
 }
