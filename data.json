@@ -351,7 +351,7 @@
       "father": "pmumqv1bstra",
       "mother": "pmumqiysvxld",
       "spouse": null,
-      "name": "Zainul (Alm.)",
+      "name": "Jainul (Alm.)",
       "g": "L",
       "born": "",
       "died": "",
@@ -363,7 +363,8 @@
           "id": "pmumtwis4wfn",
           "status": "married"
         }
-      ]
+      ],
+      "foster": false
     },
     "pmumqpf4l29b": {
       "id": "pmumqpf4l29b",
@@ -1126,11 +1127,12 @@
           "status": "married"
         }
       ],
-      "name": "???",
+      "name": "Indarsih",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtx8q0cke": {
       "id": "pmumtx8q0cke",
@@ -1155,11 +1157,12 @@
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
       "spouses": [],
-      "name": "1",
+      "name": "Rizky",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtxfcxeme": {
       "id": "pmumtxfcxeme",
@@ -1167,11 +1170,12 @@
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
       "spouses": [],
-      "name": "2",
-      "g": "P",
+      "name": "Richo",
+      "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtxh2y7yj": {
       "id": "pmumtxh2y7yj",
@@ -1179,11 +1183,12 @@
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
       "spouses": [],
-      "name": "3",
+      "name": "Ratna",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumty79cu5w": {
       "id": "pmumty79cu5w",
@@ -1196,11 +1201,12 @@
           "status": "married"
         }
       ],
-      "name": "???",
+      "name": "Hadi",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtynjkvd4": {
       "id": "pmumtynjkvd4",
@@ -1208,11 +1214,12 @@
       "father": "pmumty79cu5w",
       "mother": "pmumqpf4l29b",
       "spouses": [],
-      "name": "???",
+      "name": "Haris",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtyq66nd7": {
       "id": "pmumtyq66nd7",
@@ -1220,11 +1227,12 @@
       "father": "pmumty79cu5w",
       "mother": "pmumqpf4l29b",
       "spouses": [],
-      "name": "???",
+      "name": "Shindy",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtyuynobc": {
       "id": "pmumtyuynobc",
@@ -1232,11 +1240,12 @@
       "father": "pmumqpcydy47",
       "mother": "pmumtwis4wfn",
       "spouses": [],
-      "name": "???",
+      "name": "Dika",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtyw8z63v": {
       "id": "pmumtyw8z63v",
@@ -1244,12 +1253,13 @@
       "father": "pmumqpcydy47",
       "mother": "pmumtwis4wfn",
       "spouses": [],
-      "name": "???",
+      "name": "Linda",
       "g": "P",
       "born": "",
       "died": "",
       "note": "",
-      "adopted": false
+      "adopted": false,
+      "foster": false
     },
     "pmumtzs7lg36": {
       "id": "pmumtzs7lg36",
@@ -1936,12 +1946,13 @@
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
       "spouses": [],
-      "name": "???",
-      "g": "L",
+      "name": "Risa",
+      "g": "P",
       "born": "",
       "died": "",
       "note": "",
-      "adopted": false
+      "adopted": false,
+      "foster": false
     },
     "pmuocecs38va": {
       "id": "pmuocecs38va",
@@ -1949,12 +1960,13 @@
       "father": "pmumty79cu5w",
       "mother": "pmumqpf4l29b",
       "spouses": [],
-      "name": "???",
+      "name": "Zahra",
       "g": "P",
       "born": "",
       "died": "",
       "note": "",
-      "adopted": false
+      "adopted": false,
+      "foster": false
     },
     "pmuocf5j2dhe": {
       "id": "pmuocf5j2dhe",
