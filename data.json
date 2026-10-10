@@ -124,7 +124,7 @@
       "father": "pmumqf3nqiyc",
       "mother": "pmumqfhew1pt",
       "spouse": "pmumqw7m6y9b",
-      "name": "Kam Sin Bie (Andi Subianto)",
+      "name": "Kam Sin Bie (Andik Subianto)",
       "g": "L",
       "born": "",
       "died": "",
@@ -469,19 +469,14 @@
       "father": "pmumqjtwzosq",
       "mother": "pmumqw7m6y9b",
       "spouse": null,
-      "name": "Yuliana",
+      "name": "Yuli",
       "g": "P",
       "born": "",
       "died": "",
       "note": "",
       "order": 24,
       "exSpouses": [],
-      "spouses": [
-        {
-          "id": "pmv1s31z0df9",
-          "status": "married"
-        }
-      ],
+      "spouses": [],
       "foster": true
     },
     "pmumqs2xw0rj": {
@@ -489,7 +484,7 @@
       "father": "pmumqjtwzosq",
       "mother": "pmumqw7m6y9b",
       "spouse": null,
-      "name": "Febby",
+      "name": "Febi",
       "g": "P",
       "born": "",
       "died": "",
@@ -501,15 +496,14 @@
           "id": "pmumtzs7lg36",
           "status": "married"
         }
-      ],
-      "foster": false
+      ]
     },
     "pmumqscb6o0p": {
       "id": "pmumqscb6o0p",
       "father": "pmumqjtwzosq",
       "mother": "pmumqw7m6y9b",
       "spouse": null,
-      "name": "Meliana",
+      "name": "Mellin",
       "g": "P",
       "born": "",
       "died": "",
@@ -521,8 +515,7 @@
           "id": "pmumu067trnw",
           "status": "married"
         }
-      ],
-      "foster": false
+      ]
     },
     "pmumqsifcq3e": {
       "id": "pmumqsifcq3e",
@@ -1262,12 +1255,11 @@
           "status": "married"
         }
       ],
-      "name": "Supartoni",
+      "name": "???",
       "g": "L",
       "born": "",
       "died": "",
-      "note": "",
-      "foster": false
+      "note": ""
     },
     "pmumtzvmsxla": {
       "id": "pmumtzvmsxla",
@@ -1275,12 +1267,11 @@
       "father": "pmumtzs7lg36",
       "mother": "pmumqs2xw0rj",
       "spouses": [],
-      "name": "Nauli",
+      "name": "1",
       "g": "P",
       "born": "",
       "died": "",
-      "note": "",
-      "foster": false
+      "note": ""
     },
     "pmumtzx76r2m": {
       "id": "pmumtzx76r2m",
@@ -1288,12 +1279,11 @@
       "father": "pmumtzs7lg36",
       "mother": "pmumqs2xw0rj",
       "spouses": [],
-      "name": "Aisyah",
-      "g": "P",
+      "name": "2",
+      "g": "L",
       "born": "",
       "died": "",
-      "note": "",
-      "foster": false
+      "note": ""
     },
     "pmumu067trnw": {
       "id": "pmumu067trnw",
@@ -1323,12 +1313,11 @@
           "status": "married"
         }
       ],
-      "name": "Angga",
+      "name": "???",
       "g": "L",
       "born": "",
       "died": "",
-      "note": "",
-      "foster": false
+      "note": ""
     },
     "pmumu1k2aeg0": {
       "id": "pmumu1k2aeg0",
@@ -1562,7 +1551,8 @@
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumu7kmt5s4": {
       "id": "pmumu7kmt5s4",
@@ -1571,7 +1561,15 @@
       "mother": "pmumu7drhp54",
       "spouses": [
         {
-          "id": "pmuoylmfhd2b",
+          "id": "pmv1tdst65at",
+          "status": "divorced"
+        },
+        {
+          "id": "pmv1telq3yrs",
+          "status": "divorced"
+        },
+        {
+          "id": "pmv1t9ss5l1c",
           "status": "married"
         }
       ],
@@ -1726,7 +1724,7 @@
     },
     "pmumubhi9mk8": {
       "id": "pmumubhi9mk8",
-      "order": 138,
+      "order": 142,
       "father": "pmumqlayvi1g",
       "mother": "pmumual1g3cz",
       "spouses": [
@@ -2078,24 +2076,6 @@
       "note": "",
       "adopted": false
     },
-    "pmuoylmfhd2b": {
-      "id": "pmuoylmfhd2b",
-      "order": 136,
-      "father": "pmup01uea0ti",
-      "mother": "pmup01lbxg2l",
-      "spouses": [
-        {
-          "id": "pmumu7kmt5s4",
-          "status": "married"
-        }
-      ],
-      "name": "Fatima",
-      "g": "P",
-      "born": "",
-      "died": "",
-      "note": "",
-      "foster": false
-    },
     "pmuoylplkcl5": {
       "id": "pmuoylplkcl5",
       "order": 137,
@@ -2168,84 +2148,105 @@
       "note": "",
       "foster": false
     },
-    "pmv1s31z0df9": {
-      "id": "pmv1s31z0df9",
-      "order": 142,
+    "pmv1t9ss5l1c": {
+      "id": "pmv1t9ss5l1c",
+      "order": 138,
+      "father": "pmumqlayvi1g",
+      "mother": "pmumual1g3cz",
+      "spouses": [{
+        "id": "pmumu7kmt5s4",
+          "status": "married"
+      }],
+      "name": "Nur Asih",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "(Anak angkat sejak gadis)",
+      "foster": true
+    },
+    "pmv1tdst65at": {
+      "id": "pmv1tdst65at",
+      "order": 143,
       "father": null,
       "mother": null,
       "spouses": [
         {
-          "id": "pmumqs1j8mhl",
-          "status": "married"
+          "id": "pmumu7kmt5s4",
+          "status": "divorced"
         }
       ],
-      "name": "Iwan (Alm.)",
-      "g": "L",
+      "name": "Kastina",
+      "g": "P",
       "born": "",
       "died": "",
       "note": "",
       "foster": false
     },
-    "pmv1s35vtb6y": {
-      "id": "pmv1s35vtb6y",
-      "order": 143,
-      "father": "pmv1s31z0df9",
-      "mother": "pmumqs1j8mhl",
-      "spouses": [],
-      "name": "Afang",
-      "g": "L",
-      "born": "",
-      "died": "",
-      "note": "",
-      "foster": false
-    },
-    "pmv1s3alvbea": {
-      "id": "pmv1s3alvbea",
+    "pmv1te4zod3o": {
+      "id": "pmv1te4zod3o",
       "order": 144,
-      "father": "pmv1s31z0df9",
-      "mother": "pmumqs1j8mhl",
+      "father": "pmumu7kmt5s4",
+      "mother": "pmv1tdst65at",
       "spouses": [],
-      "name": "Ahmad",
-      "g": "L",
+      "name": "Suci Amalia",
+      "g": "P",
       "born": "",
       "died": "",
       "note": "",
       "foster": false
     },
-    "pmv1s3cixfpy": {
-      "id": "pmv1s3cixfpy",
+    "pmv1teddkmn4": {
+      "id": "pmv1teddkmn4",
       "order": 145,
-      "father": "pmv1s31z0df9",
-      "mother": "pmumqs1j8mhl",
+      "father": "pmumu7kmt5s4",
+      "mother": "pmv1tdst65at",
       "spouses": [],
-      "name": "Laga",
-      "g": "L",
+      "name": "Reza Amanda Devina",
+      "g": "P",
       "born": "",
       "died": "",
       "note": "",
       "foster": false
     },
-    "pmv1s43u6uqf": {
-      "id": "pmv1s43u6uqf",
+    "pmv1telq3yrs": {
+      "id": "pmv1telq3yrs",
       "order": 146,
-      "father": "pmumtzs7lg36",
-      "mother": "pmumqs2xw0rj",
-      "spouses": [],
-      "name": "Adzriel",
-      "g": "L",
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumu7kmt5s4",
+          "status": "divorced"
+        }
+      ],
+      "name": "Siti",
+      "g": "P",
       "born": "",
       "died": "",
       "note": "",
       "foster": false
     },
-    "pmv1s521njc5": {
-      "id": "pmv1s521njc5",
+    "pmv1teq6ga8t": {
+      "id": "pmv1teq6ga8t",
       "order": 147,
-      "father": "pmumu0fntdzf",
-      "mother": "pmumqsifcq3e",
+      "father": "pmumu7kmt5s4",
+      "mother": "pmv1telq3yrs",
       "spouses": [],
-      "name": "Arshin (Alm.)",
-      "g": "L",
+      "name": "Naura",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv1tfibplee": {
+      "id": "pmv1tfibplee",
+      "order": 149,
+      "father": "pmumu7kmt5s4",
+      "mother": "pmv1t9ss5l1c",
+      "spouses": [],
+      "name": "Fatma Nazhwa Alzahra",
+      "g": "P",
       "born": "",
       "died": "",
       "note": "",
@@ -2253,7 +2254,7 @@
     }
   },
   "pivot": "pmumqf3nqiyc",
-  "seq": 148,
+  "seq": 150,
   "trail": [
     "pmumqf3nqiyc"
   ]
