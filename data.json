@@ -262,11 +262,11 @@
       "spouses": [
         {
           "id": "pmumv6y0bgif",
-          "status": "divorced"
+          "status": "married"
         },
         {
           "id": "pmumv7kmxhyi",
-          "status": "divorced"
+          "status": "married"
         },
         {
           "id": "pmv89dcm7k4s",
@@ -1848,7 +1848,7 @@
       "spouses": [
         {
           "id": "pmumqnfx9fyp",
-          "status": "divorced"
+          "status": "married"
         }
       ],
       "name": "??? (Alm.)",
@@ -1904,14 +1904,15 @@
       "spouses": [
         {
           "id": "pmumqnfx9fyp",
-          "status": "divorced"
+          "status": "married"
         }
       ],
-      "name": "???",
+      "name": "??? (Alm.)",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumv7vh1jdc": {
       "id": "pmumv7vh1jdc",
@@ -2617,9 +2618,11 @@
       "foster": false
     }
   },
-  "pivot": "pmumqf3nqiyc",
+  "pivot": "pmumqnfx9fyp",
   "seq": 171,
   "trail": [
-    "pmumqf3nqiyc"
+    "pmumqf3nqiyc",
+    "pmumqfjpa55j",
+    "pmumqnfx9fyp"
   ]
 }
