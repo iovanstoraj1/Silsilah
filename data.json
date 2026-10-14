@@ -266,6 +266,10 @@
         },
         {
           "id": "pmumv7kmxhyi",
+          "status": "divorced"
+        },
+        {
+          "id": "pmv89dcm7k4s",
           "status": "married"
         }
       ]
@@ -287,7 +291,8 @@
           "id": "pmumv7vh1jdc",
           "status": "married"
         }
-      ]
+      ],
+      "foster": false
     },
     "pmumqntlobii": {
       "id": "pmumqntlobii",
@@ -1016,11 +1021,12 @@
           "status": "married"
         }
       ],
-      "name": "???",
+      "name": "Tina",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtt59qdn2": {
       "id": "pmumtt59qdn2",
@@ -1062,11 +1068,12 @@
           "status": "married"
         }
       ],
-      "name": "???",
+      "name": "Memei",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumttqyz7hi": {
       "id": "pmumttqyz7hi",
@@ -1074,11 +1081,12 @@
       "father": "pmumtt59qdn2",
       "mother": "pmumttkjkohl",
       "spouses": [],
-      "name": "1",
+      "name": "Junius",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumttuhwe7t": {
       "id": "pmumttuhwe7t",
@@ -1086,11 +1094,12 @@
       "father": "pmumtt59qdn2",
       "mother": "pmumttkjkohl",
       "spouses": [],
-      "name": "2",
+      "name": "Meisya",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumttwk6itb": {
       "id": "pmumttwk6itb",
@@ -1098,11 +1107,12 @@
       "father": "pmumtt59qdn2",
       "mother": "pmumttkjkohl",
       "spouses": [],
-      "name": "3",
+      "name": "Kesya",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumtw1970ct": {
       "id": "pmumtw1970ct",
@@ -1853,11 +1863,12 @@
       "father": "pmumqnfx9fyp",
       "mother": "pmumv6y0bgif",
       "spouses": [],
-      "name": "1",
+      "name": "Thya Puspa Wijaya",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumv7ajazgd": {
       "id": "pmumv7ajazgd",
@@ -1865,11 +1876,12 @@
       "father": "pmumqnfx9fyp",
       "mother": "pmumv6y0bgif",
       "spouses": [],
-      "name": "2",
+      "name": "Novita Sari Wijaya",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumv7cixdj8": {
       "id": "pmumv7cixdj8",
@@ -1877,11 +1889,12 @@
       "father": "pmumqnfx9fyp",
       "mother": "pmumv6y0bgif",
       "spouses": [],
-      "name": "3",
+      "name": "Rangga Tri Wijaya",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumv7kmxhyi": {
       "id": "pmumv7kmxhyi",
@@ -1891,7 +1904,7 @@
       "spouses": [
         {
           "id": "pmumqnfx9fyp",
-          "status": "married"
+          "status": "divorced"
         }
       ],
       "name": "???",
@@ -1911,11 +1924,12 @@
           "status": "married"
         }
       ],
-      "name": "???",
+      "name": "Tini",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumv87ove4k": {
       "id": "pmumv87ove4k",
@@ -2015,7 +2029,12 @@
       "order": 128,
       "father": "pmuocf5j2dhe",
       "mother": "pmumqiysvxld",
-      "spouses": [],
+      "spouses": [
+        {
+          "id": "pmv89764y15y",
+          "status": "married"
+        }
+      ],
       "name": "Nur",
       "g": "P",
       "born": "",
@@ -2534,13 +2553,73 @@
       "died": "",
       "note": "",
       "foster": false
+    },
+    "pmv89764y15y": {
+      "id": "pmv89764y15y",
+      "order": 166,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmuocfd0wt6l",
+          "status": "married"
+        }
+      ],
+      "name": "Saad (Alm.)",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv89ac4t7np": {
+      "id": "pmv89ac4t7np",
+      "order": 168,
+      "father": "pmumtt59qdn2",
+      "mother": "pmumttkjkohl",
+      "spouses": [],
+      "name": "???",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv89cqldumf": {
+      "id": "pmv89cqldumf",
+      "order": 169,
+      "father": "pmumqnfx9fyp",
+      "mother": "pmumv7kmxhyi",
+      "spouses": [],
+      "name": "Rasya Mustika Wijaya",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv89dcm7k4s": {
+      "id": "pmv89dcm7k4s",
+      "order": 170,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumqnfx9fyp",
+          "status": "married"
+        }
+      ],
+      "name": "Nani Sumarni",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
     }
   },
-  "pivot": "pmumu81hdbac",
-  "seq": 166,
+  "pivot": "pmumqf3nqiyc",
+  "seq": 171,
   "trail": [
-    "pmumqf3nqiyc",
-    "pmumqlayvi1g",
-    "pmumu81hdbac"
+    "pmumqf3nqiyc"
   ]
 }
