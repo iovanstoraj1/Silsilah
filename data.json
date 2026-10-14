@@ -1156,9 +1156,14 @@
       "order": 71,
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
-      "spouses": [],
+      "spouses": [
+        {
+          "id": "pmv88da602v7",
+          "status": "married"
+        }
+      ],
       "name": "Rizky",
-      "g": "L",
+      "g": "P",
       "born": "",
       "died": "",
       "note": "",
@@ -1169,7 +1174,12 @@
       "order": 72,
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
-      "spouses": [],
+      "spouses": [
+        {
+          "id": "pmv889j1zfwn",
+          "status": "married"
+        }
+      ],
       "name": "Richo",
       "g": "L",
       "born": "",
@@ -1182,7 +1192,12 @@
       "order": 73,
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
-      "spouses": [],
+      "spouses": [
+        {
+          "id": "pmv889x4wqhg",
+          "status": "married"
+        }
+      ],
       "name": "Ratna",
       "g": "P",
       "born": "",
@@ -1945,7 +1960,12 @@
       "order": 125,
       "father": "pmumqparxtb0",
       "mother": "pmumtx8q0cke",
-      "spouses": [],
+      "spouses": [
+        {
+          "id": "pmv88ackdnio",
+          "status": "married"
+        }
+      ],
       "name": "Risa",
       "g": "P",
       "born": "",
@@ -2386,11 +2406,137 @@
       "died": "",
       "note": "",
       "foster": false
+    },
+    "pmv889j1zfwn": {
+      "id": "pmv889j1zfwn",
+      "order": 158,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumtxfcxeme",
+          "status": "married"
+        }
+      ],
+      "name": "Desy",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv889muq9ya": {
+      "id": "pmv889muq9ya",
+      "order": 159,
+      "father": "pmumtxfcxeme",
+      "mother": "pmv889j1zfwn",
+      "spouses": [],
+      "name": "Kenzafi",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv889x4wqhg": {
+      "id": "pmv889x4wqhg",
+      "order": 160,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumtxh2y7yj",
+          "status": "married"
+        }
+      ],
+      "name": "Arif",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv88a0sj5yz": {
+      "id": "pmv88a0sj5yz",
+      "order": 161,
+      "father": "pmv889x4wqhg",
+      "mother": "pmumtxh2y7yj",
+      "spouses": [],
+      "name": "Briyan",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv88ackdnio": {
+      "id": "pmv88ackdnio",
+      "order": 162,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmuocdo97gtp",
+          "status": "married"
+        }
+      ],
+      "name": "Dandi",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv88agrs54h": {
+      "id": "pmv88agrs54h",
+      "order": 163,
+      "father": "pmv88ackdnio",
+      "mother": "pmuocdo97gtp",
+      "spouses": [],
+      "name": "Cantika",
+      "g": "P",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv88da602v7": {
+      "id": "pmv88da602v7",
+      "order": 164,
+      "father": null,
+      "mother": null,
+      "spouses": [
+        {
+          "id": "pmumtxcyj1y4",
+          "status": "married"
+        }
+      ],
+      "name": "Wawan",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
+    },
+    "pmv88de3xsbv": {
+      "id": "pmv88de3xsbv",
+      "order": 165,
+      "father": "pmv88da602v7",
+      "mother": "pmumtxcyj1y4",
+      "spouses": [],
+      "name": "Alvaro",
+      "g": "L",
+      "born": "",
+      "died": "",
+      "note": "",
+      "foster": false
     }
   },
-  "pivot": "pmumqf3nqiyc",
-  "seq": 158,
+  "pivot": "pmumtxcyj1y4",
+  "seq": 166,
   "trail": [
-    "pmumqf3nqiyc"
+    "pmumqv1bstra",
+    "pmumqparxtb0",
+    "pmumtxcyj1y4"
   ]
 }
