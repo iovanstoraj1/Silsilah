@@ -1695,11 +1695,12 @@
           "status": "divorced"
         }
       ],
-      "name": "???",
+      "name": "Vicka",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumu9pmftp2": {
       "id": "pmumu9pmftp2",
@@ -1707,11 +1708,12 @@
       "father": "pmumu81hdbac",
       "mother": "pmumu9ctsjoy",
       "spouses": [],
-      "name": "1",
+      "name": "Ezra Ben Hosea",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumual1g3cz": {
       "id": "pmumual1g3cz",
@@ -1741,11 +1743,12 @@
           "status": "married"
         }
       ],
-      "name": "???",
+      "name": "Hosana Erwono",
       "g": "L",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumub0q2osp": {
       "id": "pmumub0q2osp",
@@ -1753,11 +1756,12 @@
       "father": "pmumuaxkaht7",
       "mother": "pmumu8jnjneh",
       "spouses": [],
-      "name": "1",
+      "name": "Clarine",
       "g": "P",
       "born": "",
       "died": "",
-      "note": ""
+      "note": "",
+      "foster": false
     },
     "pmumubhi9mk8": {
       "id": "pmumubhi9mk8",
@@ -2532,11 +2536,11 @@
       "foster": false
     }
   },
-  "pivot": "pmumtxcyj1y4",
+  "pivot": "pmumu81hdbac",
   "seq": 166,
   "trail": [
-    "pmumqv1bstra",
-    "pmumqparxtb0",
-    "pmumtxcyj1y4"
+    "pmumqf3nqiyc",
+    "pmumqlayvi1g",
+    "pmumu81hdbac"
   ]
 }
